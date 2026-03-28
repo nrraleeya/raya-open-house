@@ -30,7 +30,6 @@ body {
     z-index: 1;
 }
 
-/* Coded Floral Border */
 .floral-border {
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     pointer-events: none; border: 20px solid transparent;
@@ -40,32 +39,126 @@ body {
 .page.active { z-index: 2; transform: rotateY(0deg); opacity: 1; }
 .page.next-page { opacity: 0; }
 
-.calligraphy { font-family: 'Pinyon Script', cursive; color: var(--gold); line-height: 1.1; }
-.gold-glow { text-shadow: 0 0 8px rgba(197, 160, 89, 0.2); font-size: 3.8rem; margin: 10px 0; }
+.content { padding: 30px; text-align: center; width: 100%; box-sizing: border-box; }
+.padded-content { padding: 45px 35px; }
 
-.batik-overlay { 
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30c0-10 10-10 10-20s-10-10-10-10-10 0-10 10 10 10 10 20z' fill='%23c5a059' fill-opacity='0.04'/%3E%3C/svg%3E");
+.calligraphy { font-family: 'Pinyon Script', cursive; color: var(--gold); }
+.gold-glow { text-shadow: 0 0 8px rgba(197, 160, 89, 0.2); margin: 5px 0; }
+.gold-text { color: var(--gold) !important; font-weight: 600; }
+
+.gold-line { width: 50%; height: 2px; background: var(--gold); margin: 10px auto; }
+
+/* 4-Pie Countdown */
+.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin: 15px 0; }
+.pie-item { position: relative; display: flex; flex-direction: column; align-items: center; font-size: 0.55rem; color: var(--gold); }
+.pie { width: 50px; height: 50px; background: #eee; border-radius: 50%; position: relative; }
+.pie::after { content: ""; position: absolute; top: 4px; left: 4px; width: 42px; height: 42px; background: var(--nude); border-radius: 50%; }
+.val { position: absolute; top: 16px; width: 100%; text-align: center; font-size: 0.8rem; font-weight: 600; z-index: 5; }
+
+.nav-container { position: absolute; top: 35px; width: 85%; display: flex; justify-content: space-between; }
+.btn-small-nav { border: 1px solid var(--gold); padding: 5px 10px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; cursor: pointer; font-weight: 600; }
+
+.formal-text { font-size: 0.8rem; line-height: 1.5; margin: 10px 0; }
+.label { display: block; font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 3px; }
+
+.theme-box { border: 1px dashed var(--gold); padding: 8px; border-radius: 8px; width: 90%; background: rgba(197, 160, 89, 0.05); margin: 5px auto; }
+
+.map-grid-boxed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 90%; margin: 15px auto; }
+.map-box-item { border: 1px solid var(--gold); padding: 8px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; text-decoration: none; font-weight: 600; text-align: center; }
+.nav-container {
+    position: absolute;
+    top: 35px;
+    width: 85%;
+    display: flex;
+    z-index: 10;
 }
 
-.content { padding: 30px; text-align: center; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
-
-/* RSVP Toggle Card Styling */
-.rsvp-options { display: flex; gap: 10px; margin: 15px 0; }
-.radio-card { border: 1px solid var(--gold); padding: 10px 15px; border-radius: 8px; cursor: pointer; transition: 0.3s; font-size: 0.9rem; }
+/* Memastikan teks Jemputan tidak terganggu oleh butang di atas */
+.content {
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px; /* Tambah margin sikit supaya tidak terlalu rapat dengan butang */
+}
+/* RSVP - Neat Style */
+.rsvp-page { padding: 45px 35px; display: flex; flex-direction: column; justify-content: center; }
+#rsvpForm { width: 100%; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.rsvp-input { width: 85%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; text-align: center; font-family: inherit; }
+.rsvp-options { display: flex; gap: 10px; }
+.radio-card { border: 1px solid var(--gold); padding: 8px 12px; border-radius: 8px; font-size: 0.75rem; cursor: pointer; }
 .radio-card input { display: none; }
 .radio-card:has(input:checked) { background: var(--gold); color: white; }
+#submitBtn { background: var(--gold); color: white; border: none; padding: 12px 25px; border-radius: 8px; font-weight: 600; cursor: pointer; width: 85%; }
 
-.formal-text { font-size: 0.8rem; line-height: 1.8; margin: 15px 0; color: #6a5e55; padding: 0 10px; }
-.info-row { margin-bottom: 18px; text-align: center; }
-.label { display: block; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 2px; margin-bottom: 4px; }
-.theme-box { border: 1px dashed var(--gold); padding: 10px; border-radius: 8px; width: 85%; background: rgba(255,255,255,0.4); }
+/* Ucapan Section */
+.ucapan-page {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Memastikan semua di tengah */
+    gap: 10px;
+    box-sizing: border-box;
+}
+.doa-text-tiny { font-size: 0.65rem; line-height: 1.3; font-style: italic; color: #666; margin-bottom: 5px; }
+.live-ucapan-box {
+    width: 95%; /* Guna 95% supaya ada ruang sikit kiri kanan */
+    max-width: 330px; 
+    background: #fff;
+    border: 1px solid var(--gold);
+    padding: 15px; /* Tambah padding dalam */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    height: 220px; /* Tingkatkan sikit ketinggian untuk muatkan input */
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.ucapan-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    text-align: left;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f9f4e8;
+}
+.ucapan-item { padding: 3px 0; border-bottom: 1px solid #f0f0f0; }
+.input-ucapan-row {
+    display: flex;
+    flex-wrap: wrap; /* Benarkan input turun bawah jika tak cukup ruang */
+    gap: 5px;
+    width: 100%;
+}
 
-.map-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; width: 90%; margin-top: 15px; }
-.map-btn { border: 1px solid var(--gold); padding: 10px; text-decoration: none; color: var(--gold); font-size: 0.65rem; border-radius: 4px; font-weight: bold; }
+.input-ucapan-row input {
+    font-size: 0.7rem;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1; /* Biar dia ambil ruang yang ada */
+    min-width: 80px; /* Elakkan input jadi terlalu halus */
+    box-sizing: border-box;
+}
+.input-ucapan-row button {
+    background: var(--gold);
+    color: white;
+    border: none;
+    font-size: 0.7rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
 
-.petal { position: fixed; top: -5vh; z-index: 100; pointer-events: none; animation: fall linear forwards; opacity: 0.7; }
+/* Contact Grid */
+.contact-grid-neat {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1.6;
+    margin-top: 5px;
+}
+
+.petal { position: fixed; top: -5vh; z-index: 100; pointer-events: none; animation: fall linear forwards; }
 @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
-
-#rsvpForm { width: 100%; display: flex; flex-direction: column; align-items: center; }
-#rsvpForm input { width: 85%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; background: white; text-align: center; font-family: inherit; }
-#submitBtn { background: var(--gold); color: white; border: none; padding: 12px 25px; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 10px; }
