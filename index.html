@@ -80,33 +80,37 @@
                             </label>
                             <label class="radio-card">
                                 <input type="radio" name="attendance" value="Tidak Hadir" required>
-                                <span>Tidak Hadir ❌</span>
+                                <span>Maaf ❌</span>
                             </label>
                         </div>
                         <input type="number" name="pax" min="1" max="20" value="1" required>
                         <button type="submit" id="submitBtn">Hantar RSVP 🕊️</button>
                     </form>
-                    <button class="download-btn" onclick="window.print()">Simpan Kad (PDF) 📥</button>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <audio id="rayaSong" loop><source src="serumpun.mp3" type="audio/mpeg"></audio>
+    <audio id="rayaSong" loop preload="auto">
+        <source src="serumpun.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
         const pages = document.querySelectorAll('.page');
         const rsvpForm = document.getElementById('rsvpForm');
         const mySong = document.getElementById('rayaSong');
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyyhqMw87goqPSb6Ea5gbl_wDtCAQkaX5FwjHhDoYyjEWMv0zJIOPz8hGB2p_PWqJHD0A/exec'; // Replace this!
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyyhqMw87goqPSb6Ea5gbl_wDtCAQkaX5FwjHhDoYyjEWMv0zJIOPz8hGB2p_PWqJHD0A/exec';
 
         function nextPage(currentIndex) {
-            if (currentIndex === 0 && mySong) mySong.play().catch(e => console.log("Audio blocked"));
+            // Fix: Attempt to play music on the very first interaction
+            if (currentIndex === 0 && mySong) {
+                mySong.play().catch(e => console.log("Audio play blocked by browser."));
+            }
             
             if (currentIndex < pages.length - 1) {
-                // The 3D Flip Animation
-                pages[currentIndex].style.transform = "rotateY(-160deg)";
+                // 3D Flip Hinge Animation
+                pages[currentIndex].style.transform = "rotateY(-165deg)";
                 pages[currentIndex].style.zIndex = "0";
                 
                 const next = pages[currentIndex + 1];
@@ -117,15 +121,25 @@
         }
 
         rsvpForm.addEventListener('click', (e) => e.stopPropagation());
+        
         rsvpForm.addEventListener('submit', e => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
             btn.innerHTML = "Menghantar...";
+            btn.disabled = true;
+
             fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(rsvpForm)})
-            .then(() => { btn.innerHTML = "Berjaya! ❤️"; alert("RSVP dihantar!"); });
+            .then(() => { 
+                btn.innerHTML = "Berjaya! ❤️"; 
+                alert("Terima kasih! RSVP anda telah diterima."); 
+            })
+            .catch(error => {
+                btn.innerHTML = "Ralat!";
+                btn.disabled = false;
+            });
         });
 
-        // Falling Flowers
+        // Colorful Petals Script
         function createPetal() {
             const petal = document.createElement('div');
             const flowers = ['🌺', '🌸', '🌼', '🌷'];
