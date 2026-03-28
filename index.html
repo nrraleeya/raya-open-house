@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jemputan Raya Dr. Rozita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="scroll-stack" id="scrollStack">
+            
+            <div class="page active batik-overlay" onclick="nextPage(0)">
+                <div class="floral-border"></div>
+                <div class="content">
+                    <p class="ornament">✨</p>
+                    <h1 class="calligraphy gold-glow">Jemputan</h1>
+                    <p class="event-type">Majlis Rumah Terbuka</p>
+                    <hr class="gold-line">
+                    <h2 class="year-text">Aidilfitri 1447H</h2>
+                    <p class="tap-hint">Klik untuk Buka 💌</p>
+                </div>
+            </div>
+
+            <div class="page next-page batik-overlay" onclick="nextPage(1)">
+                <div class="floral-border"></div>
+                <div class="content">
+                    <p class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+                    <p class="salam">Assalamualaikum w.b.t,</p>
+                    <p class="host-intro">Saya,</p>
+                    <h3 class="host-name calligraphy">Dr. Rozita Che Rodi & Keluarga</h3>
+                    <p class="formal-text">Menjemput <strong>YBhg. Dato' / Datin / Prof. / Dr. / Tuan / Puan</strong> seisi keluarga ke:</p>
+                    <h2 class="calligraphy gold-glow" style="font-size: 1.5rem;">Majlis Rumah Terbuka</h2>
+                    <h2 class="calligraphy gold-glow" style="font-size: 2.8rem;">Aidilfitri 1447H</h2>
+                    <div class="tap-hint-small">Seterusnya ➔</div>
+                </div>
+            </div>
+
+            <div class="page next-page batik-overlay" onclick="nextPage(2)">
+                <div class="floral-border"></div>
+                <div class="content">
+                    <h2 class="section-title calligraphy">Atur Cara 🕌</h2>
+                    <div class="info-row">
+                        <span class="label">📅 TARIKH</span>
+                        <p>Sabtu, 4 April 2026<br><small>(Minggu Ke-3 Syawal 1447H)</small></p>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">⏰ MASA</span>
+                        <p>1:00 PM - 7:00 PM</p>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">📍 ALAMAT</span>
+                        <p class="address-text">No. 31, Jalan 4/10B, Seksyen 4 Tambahan, Bangi</p>
+                    </div>
+                    <div class="theme-box">
+                        <span class="label">🌸 TEMA PAKAIAN</span>
+                        <p>Tradisional Floral</p>
+                    </div>
+                    <div class="map-grid">
+                        <a href="https://waze.com/ul?ll=2.9619,101.7761&navigate=yes" target="_blank" class="map-btn">WAZE</a>
+                        <a href="http://googleusercontent.com/maps.google.com/9" target="_blank" class="map-btn">GOOGLE</a>
+                        <a href="https://maps.apple.com/?daddr=2.9619,101.7761" target="_blank" class="map-btn">APPLE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page next-page batik-overlay">
+                <div class="floral-border"></div>
+                <div class="content">
+                    <h2 class="section-title calligraphy">RSVP ✍️</h2>
+                    <p class="formal-text">Sila isi eKAD di bawah, dan mohon sahkan kehadiran di RSVP sebelum <strong>02 April 2026</strong></p>
+                    <form id="rsvpForm">
+                        <input type="text" name="name" placeholder="Nama Penuh" required>
+                        <div class="rsvp-options">
+                            <label class="radio-card">
+                                <input type="radio" name="attendance" value="Hadir" required>
+                                <span>Hadir ✅</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="attendance" value="Tidak Hadir" required>
+                                <span>Tidak Hadir ❌</span>
+                            </label>
+                        </div>
+                        <input type="number" name="pax" min="1" max="20" value="1" required>
+                        <button type="submit" id="submitBtn">Hantar RSVP 🕊️</button>
+                    </form>
+                    <button class="download-btn" onclick="window.print()">Simpan Kad (PDF) 📥</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <audio id="rayaSong" loop><source src="serumpun.mp3" type="audio/mpeg"></audio>
+
+    <script>
+        const pages = document.querySelectorAll('.page');
+        const rsvpForm = document.getElementById('rsvpForm');
+        const mySong = document.getElementById('rayaSong');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyyhqMw87goqPSb6Ea5gbl_wDtCAQkaX5FwjHhDoYyjEWMv0zJIOPz8hGB2p_PWqJHD0A/exec'; // Replace this!
+
+        function nextPage(currentIndex) {
+            if (currentIndex === 0 && mySong) mySong.play().catch(e => console.log("Audio blocked"));
+            
+            if (currentIndex < pages.length - 1) {
+                // The 3D Flip Animation
+                pages[currentIndex].style.transform = "rotateY(-160deg)";
+                pages[currentIndex].style.zIndex = "0";
+                
+                const next = pages[currentIndex + 1];
+                next.classList.remove('next-page');
+                next.classList.add('active');
+                next.style.zIndex = "2";
+            }
+        }
+
+        rsvpForm.addEventListener('click', (e) => e.stopPropagation());
+        rsvpForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = "Menghantar...";
+            fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(rsvpForm)})
+            .then(() => { btn.innerHTML = "Berjaya! ❤️"; alert("RSVP dihantar!"); });
+        });
+
+        // Falling Flowers
+        function createPetal() {
+            const petal = document.createElement('div');
+            const flowers = ['🌺', '🌸', '🌼', '🌷'];
+            petal.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(petal);
+            setTimeout(() => petal.remove(), 6000);
+        }
+        setInterval(createPetal, 400);
+    </script>
+</body>
+</html>
