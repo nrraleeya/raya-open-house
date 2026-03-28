@@ -19,14 +19,14 @@
                 </div>
                 <div class="content">
                     <p class="ornament">✨</p>
-                    <h1 class="calligraphy gold-glow" style="font-size: 4.2rem; margin-bottom: 0;">Jemputan</h1>
+                    <h1 class="calligraphy gold-glow" style="font-size: 4.5rem; margin-bottom: 0;">Jemputan</h1>
                     <div class="gold-line"></div>
                     <h2 class="event-type">Majlis Rumah Terbuka</h2>
                     <h2 class="event-type">Aidilfitri 1447H</h2>
                     <div class="gold-line"></div>
                     <p class="tap-hint" style="margin-bottom: 25px;">SABTU | 4 APRIL 2026</p>
 
-                    <div class="countdown-grid" style="margin-top: 20px;">
+                    <div class="countdown-grid">
                         <div class="pie-item"><div class="pie" id="pieD"></div><span>Hari</span><div class="val" id="valD">0</div></div>
                         <div class="pie-item"><div class="pie" id="pieH"></div><span>Jam</span><div class="val" id="valH">0</div></div>
                         <div class="pie-item"><div class="pie" id="pieM"></div><span>Min</span><div class="val" id="valM">0</div></div>
@@ -49,9 +49,10 @@
                     <p class="formal-text">Assalamualaikum w.b.t & Salam Sejahtera,</p>
                     <p class="formal-text">Saya,</p>
                     <h2 class="host-name calligraphy">Dr. Rozita Che Rodi<br>&<br>Keluarga</h2>
-                    <p class="formal-text">Menjemput YBhg. Dato' / Datin / Prof. / Dr. / Tuan / Puan seisi keluarga ke</p>
-                    <h2 class="calligraphy gold-glow" style="font-size: 1.6rem; margin: 5px 0;">Majlis Rumah Terbuka Aidilfitri 1447H</h2>
-                    <p class="formal-text">Sekian, terima kasih.</p>
+                    <p class="formal-text">Dengan berbesar hatinya ingin menjemput<br><strong>YBhg. Dato' / Datin / Prof. / Dr. / Tuan / Puan</strong><br>seisi keluarga ke</p>
+                    <h2 class="calligraphy gold-glow" style="font-size: 1.5rem;">Majlis Rumah Terbuka</h2>
+                    <h2 class="calligraphy gold-glow" style="font-size: 1.5rem;">Aidilfitri 1447H</h2>
+                    <p class="formal-text">Semoga kehadiran anda semua akan lebih menyerikan lagi majlis ini.</p>
                 </div>
             </div>
 
@@ -63,11 +64,17 @@
                 </div>
                 <div class="content padded">
                     <h2 class="section-title calligraphy">Atur Cara Majlis</h2>
-                    <div class="info-row"><span class="label gold-text">📅 TARIKH</span><p class="formal-text">4 April 2026 (Sabtu)</p></div>
-                    <div class="info-row"><span class="label gold-text">⏰ MASA</span><p class="formal-text">1.00 PM - 7.00 PM</p></div>
+                    <div class="info-row">
+                        <span class="label gold-text">📅 TARIKH</span>
+                        <p class="formal-text">Sabtu, 4 April 2026<br><small><i>(Minggu Ke-3 Syawal 1447H)</i></small></p>
+                    </div>
+                    <div class="info-row">
+                        <span class="label gold-text">⏰ MASA</span>
+                        <p class="formal-text">1.00 PM - 7.00 PM</p>
+                    </div>
                     <div class="info-row">
                         <span class="label gold-text">📍 ALAMAT</span>
-                        <div class="address-block formal-text">No. 31, Jalan 4/10B, Seksyen 4 Tambahan<br>43650 Bandar Baru Bangi, Selangor</div>
+                        <div class="address-block formal-text">No. 31, Jalan 4/10B<br>Seksyen 4 Tambahan<br>43650 Bandar Baru Bangi<br>Selangor Darul Ehsan</div>
                     </div>
                     <div class="map-grid-boxed">
                         <a href="https://waze.com/ul/hw282u5eg9" target="_blank" class="map-box-item">WAZE</a>
@@ -76,7 +83,7 @@
                     </div>
                     <div class="theme-box">
                         <span class="label gold-text">🌸 TEMA PAKAIAN</span>
-                        <p class="formal-text" style="font-size: 0.7rem;">Tradisional Floral</p>
+                        <p class="formal-text">Para jemputan dialu-alukan mengenakan pakaian Tradisional Floral</p>
                     </div>
                 </div>
             </div>
@@ -89,17 +96,17 @@
                 </div>
                 <div class="content padded">
                     <h2 class="section-title calligraphy">RSVP ✍️</h2>
-                    <p class="formal-text" style="margin-bottom: 10px;">PENGESAHAN KEHADIRAN<br><small>(Sebelum 2 April 2026)</small></p>
+                    <p class="formal-text">PENGESAHAN KEHADIRAN<br><small>(Sebelum 2 April 2026)</small></p>
                     <form id="rsvpForm" class="rsvp-stacked-form">
                         <input type="text" name="name" placeholder="Nama Penuh" required class="rsvp-input">
                         <div class="rsvp-options-stacked">
                             <label class="radio-card-stacked"><input type="radio" name="attendance" value="Hadir" required><span>Hadir ✅</span></label>
-                            <label class="radio-card-stacked"><input type="radio" name="attendance" value="Tidak Hadir" required><span>Maaf ❌</span></label>
+                            <label class="radio-card-stacked"><input type="radio" name="attendance" value="Tidak Hadir" required><span>Tidak Hadir ❌</span></label>
                         </div>
                         <input type="number" name="pax" min="1" max="20" placeholder="Bilangan Hadir" required class="rsvp-input">
                         <button type="submit" id="submitBtn">Hantar RSVP 🕊️</button>
                     </form>
-                    <p class="doa-text-tiny" style="margin-top: 20px;">"Ya Allah Ya Rahman Ya Rahim, permudahkanlah majlis ini supaya ia berjalan lancar, dikuatkan lagi ukhuwah & rahmatilah kami. Aamin."</p>
+                    <p class="doa-text-tiny" style="margin-top: 25px;">"Ya Allah Ya Rahman Ya Rahim, Kami berhimpun hari ini untuk Majlis Rumah Terbuka Aidilfitri 1447H. Maka Kau permudahkanlah majlis ini supaya ia berjalan dengan lancar, dikuatkan lagi ukhuwah antara kami juga rahmatilah kami."<br><br> Aamin, Ya Rabbal A'lamin</p>
                 </div>
             </div>
 
@@ -118,17 +125,20 @@
                             <button onclick="sendUcapan()" id="btnUcapan">Hantar</button>
                         </div>
                     </div>
+
                     <div class="contact-grid-neat">
-                        <p class="label gold-text">📞 HUBUNGI:</p>
-                        <p><span class="gold-text">Ita:</span> <span class="black-phone">013-7751606</span></p>
-                        <p><span class="gold-text">Aini:</span> <span class="black-phone">019-7244266</span></p>
-                        <p><span class="gold-text">Amir:</span> <span class="black-phone">019-3086118</span></p>
+                        <p class="label gold-text" style="margin-bottom: 8px;">📞 NO. UNTUK DIHUBUNGI:</p>
+                        <p><span class="black-phone">013-7751606</span> <span class="gold-text">(Ita)</span></p>
+                        <p><span class="black-phone">019-7244266</span> <span class="gold-text">(Aini)</span></p>
+                        <p><span class="black-phone">019-3086118</span> <span class="gold-text">(Amir)</span></p>
                     </div>
+
                     <div class="closing-section">
                         <div class="raya-vector">
-                            <svg width="60" height="30" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="80" height="40" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10 45 H90 M20 45 V30 Q20 20 35 20 T50 10 T65 20 T80 30 V45" stroke="#c5a059" stroke-width="1.5" fill="none"/>
                                 <path d="M45 45 V35 Q45 30 50 30 T55 35 V45" stroke="#c5a059" stroke-width="1"/>
+                                <circle cx="50" cy="5" r="2" fill="#c5a059"/>
                             </svg>
                         </div>
                         <h1 class="calligraphy gold-glow" style="font-size: 1.8rem; margin:0;">Maaf Zahir & Batin</h1>
