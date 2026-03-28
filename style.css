@@ -156,11 +156,16 @@ body {
     align-items: center;
     width: 100%;
 }
-.white-phone {
-    color: #ffffff !important;
+.black-phone {
+    color: #000000 !important;
     font-weight: 500;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Tambah shadow sikit supaya nampak jelas atas background cerah */
-    margin: 2px 0;
+    letter-spacing: 0.5px;
+}
+
+/* Memastikan nama kekal gold */
+.gold-text {
+    color: var(--gold) !important;
+    font-weight: 600;
 }
 
 /* Mengecilkan Maaf Zahir & Batin */
@@ -192,7 +197,14 @@ body {
 }
 
 .contact-grid-neat {
-    margin-bottom: 15px;
+    text-align: center;
+    font-size: 0.8rem; /* Besarkan sikit supaya jelas */
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.contact-grid-neat p {
+    margin: 4px 0; /* Beri ruang sikit antara baris */
 }
 /* Ucapan Section */
 .ucapan-page {
