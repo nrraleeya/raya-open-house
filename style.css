@@ -39,10 +39,7 @@ body {
 .gold-line { width: 45%; height: 1px; background: var(--gold); margin: 10px auto; }
 
 /* Bismillah */
-.bismillah-container { margin-bottom: 10px; }
-.bismillah { font-size: 1.1rem; color: var(--gold); margin-bottom: 5px; }
-.bismillah-ornament { width: 100px; height: 1px; background: var(--gold); margin: 0 auto; position: relative; }
-.bismillah-ornament::after { content: "✽"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--nude) !important; padding: 0 5px; color: var(--gold); font-size: 0.8rem; }
+.bismillah-container { margin-bottom: 10px; width: 100%; }
 
 /* Countdown */
 .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 90%; }
@@ -51,8 +48,9 @@ body {
 .pie::after { content: ""; position: absolute; inset: 4px; background: var(--nude); border-radius: 50%; z-index: 1; }
 .val { position: relative; z-index: 2; font-size: 0.9rem; font-weight: 600; color: var(--text); }
 
-/* Navigation */
+/* Navigation - FIXED TOP RIGHT FOR PAGE 1 */
 .nav-container { position: absolute; top: 30px; width: 85%; display: flex; justify-content: space-between; z-index: 10; }
+.right-align { justify-content: flex-end; } /* Ini yang buat butang duduk kanan */
 .btn-small-nav { border: 1px solid var(--gold); padding: 5px 12px; font-size: 0.7rem; color: var(--gold); border-radius: 4px; cursor: pointer; background: transparent; }
 
 /* Text Style */
@@ -96,7 +94,7 @@ body {
 /* Ucapan Section */
 .live-ucapan-box { width: 100%; border: 1px solid var(--gold); border-radius: 12px; padding: 12px; background: #fff; height: 180px; display: flex; flex-direction: column; }
 .ucapan-list { flex-grow: 1; overflow-y: auto; text-align: left; font-size: 0.65rem; margin-bottom: 5px; }
-.input-ucapan-row { display: flex; gap: 4px; margin-top: 5px; }
+.input-ucapan-row { display: flex; gap: 4px; margin-top: 5px; width: 100%; }
 .input-ucapan-row input { flex: 1; font-size: 0.65rem; padding: 7px; border: 1px solid #ddd; border-radius: 4px; min-width: 0; }
 .input-ucapan-row button { background: var(--gold); color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
 
