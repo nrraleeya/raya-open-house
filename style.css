@@ -11,7 +11,42 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
+/* Layout khas untuk Page 1 */
+.page1-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Tolak info ke atas & countdown ke bawah */
+    padding: 80px 30px 60px 30px !important; /* Beri ruang atas dan bawah */
+    box-sizing: border-box;
+}
 
+.main-info {
+    margin-top: 10px; /* Adjust sikit untuk naikkan teks */
+}
+
+.countdown-section-bottom {
+    margin-top: 40px; /* Jarakkan dari teks atas */
+    width: 100%;
+}
+
+/* Pastikan Countdown Grid tetap center */
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    justify-items: center;
+    width: 100%;
+}
+
+/* Kekalkan saiz Jemputan yang besar */
+.calligraphy.gold-glow {
+    line-height: 1;
+}
+
+.gold-line {
+    margin: 15px auto;
+}
 .main-wrapper { width: 380px; max-width: 95vw; height: 680px; perspective: 2500px; }
 .scroll-stack { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; }
 
