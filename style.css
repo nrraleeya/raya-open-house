@@ -21,8 +21,8 @@ body {
     background-color: var(--nude);
     color: var(--text);
     display: flex; flex-direction: column;
-    justify-content: center; /* KANDUNGAN DI TENGAH SECARA VERTIKAL */
-    align-items: center; /* KANDUNGAN DI TENGAH SECARA HORIZONTAL */
+    justify-content: center; /* CENTER MIDDLE */
+    align-items: center; 
     box-shadow: 5px 10px 30px rgba(0,0,0,0.1);
     border: 1px solid rgba(197, 160, 89, 0.2);
     z-index: 1;
@@ -31,7 +31,7 @@ body {
 .page.active { z-index: 2; transform: rotateY(0deg); visibility: visible; }
 .page.next-page { opacity: 0; visibility: hidden; }
 
-.content { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+.content { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .padded { padding: 40px 25px; }
 
 .calligraphy { font-family: 'Pinyon Script', cursive; color: var(--gold); line-height: 1.2; }
@@ -39,49 +39,44 @@ body {
 .gold-line { width: 45%; height: 1px; background: var(--gold); margin: 10px auto; }
 
 /* Bismillah */
-.bismillah-container { margin-bottom: 15px; }
+.bismillah-container { margin-bottom: 10px; }
 .bismillah { font-size: 1.1rem; color: var(--gold); margin-bottom: 5px; }
 .bismillah-ornament { width: 100px; height: 1px; background: var(--gold); margin: 0 auto; position: relative; }
 .bismillah-ornament::after { content: "✽"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--nude); padding: 0 5px; color: var(--gold); font-size: 0.8rem; }
 
-/* Countdown */
-.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 95%; }
-.pie-item { display: flex; flex-direction: column; align-items: center; font-size: 0.6rem; color: var(--gold); font-weight: 600; }
-.pie { width: 50px; height: 50px; border-radius: 50%; background: #eee; position: relative; }
-.pie::after { content: ""; position: absolute; inset: 4px; background: var(--nude); border-radius: 50%; }
-.val { position: absolute; width: 100%; top: 15px; text-align: center; font-size: 0.8rem; z-index: 2; }
+/* Countdown - PIE & VAL FIX */
+.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 90%; }
+.pie-item { position: relative; display: flex; flex-direction: column; align-items: center; font-size: 0.6rem; color: var(--gold); font-weight: 600; }
+.pie { width: 50px; height: 50px; border-radius: 50%; background: #eee; position: relative; z-index: 1; }
+.pie::after { content: ""; position: absolute; inset: 4px; background: var(--nude); border-radius: 50%; z-index: 2; }
+.val { position: absolute; width: 100%; top: 15px; text-align: center; font-size: 0.8rem; z-index: 3; } /* Val duduk atas pie */
 
 /* Navigation */
 .nav-container { position: absolute; top: 25px; width: 85%; display: flex; justify-content: space-between; z-index: 10; }
 .right-align { justify-content: flex-end; }
 .btn-small-nav { border: 1px solid var(--gold); padding: 4px 10px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; cursor: pointer; }
 
-.formal-text { font-size: 0.78rem; line-height: 1.5; margin: 8px 0; }
-.map-grid-boxed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 95%; margin: 15px 0; }
-.map-box-item { border: 1px solid var(--gold); padding: 7px; font-size: 0.65rem; color: var(--gold); text-decoration: none; border-radius: 4px; font-weight: 600; }
-.theme-box { border: 1px dashed var(--gold); padding: 8px; width: 90%; border-radius: 8px; }
+/* Contact Section - BLACK PHONE & GOLD NAME */
+.contact-grid-neat { font-size: 0.8rem; line-height: 1.6; margin: 10px 0; }
+.black-phone { color: #000 !important; font-weight: 600; }
+.gold-text { color: var(--gold) !important; font-weight: 600; }
 
-/* RSVP */
+/* Forms & Buttons */
 .rsvp-stacked-form { width: 100%; max-width: 270px; display: flex; flex-direction: column; gap: 10px; }
 .rsvp-input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; text-align: center; }
-.rsvp-options-stacked { width: 100%; display: flex; flex-direction: column; gap: 6px; }
-.radio-card-stacked { border: 1px solid var(--gold); padding: 10px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; background: #fff; }
+.radio-card-stacked { border: 1px solid var(--gold); padding: 10px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; background: #fff; width: 100%; text-align: center; }
 .radio-card-stacked input { display: none; }
 .radio-card-stacked:has(input:checked) { background: var(--gold); color: #fff; }
 #submitBtn { width: 100%; background: var(--gold); color: #fff; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+/* Page 3 Atur Cara Colors */
+.info-row p { font-size: 0.8rem; color: var(--text); }
+.formal-text { font-size: 0.8rem; color: var(--text); }
+
 .doa-text-tiny { font-size: 0.62rem; font-style: italic; color: #777; line-height: 1.4; width: 90%; }
 
-/* Ucapan */
 .live-ucapan-box { width: 100%; border: 1px solid var(--gold); border-radius: 12px; padding: 12px; background: #fff; height: 180px; display: flex; flex-direction: column; }
-.ucapan-list { flex-grow: 1; overflow-y: auto; text-align: left; font-size: 0.65rem; margin-bottom: 5px; }
-.ucapan-item { padding: 3px 0; border-bottom: 1px solid #eee; }
-.input-ucapan-row { display: flex; gap: 4px; }
-.input-ucapan-row input { flex: 1; font-size: 0.65rem; padding: 7px; border: 1px solid #ddd; border-radius: 4px; min-width: 0; }
-.input-ucapan-row button { background: var(--gold); color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
-
-.contact-grid-neat { font-size: 0.75rem; line-height: 1.4; margin: 10px 0; }
-.black-phone { color: #000; font-weight: 600; }
-.closing-section { display: flex; flex-direction: column; align-items: center; }
+.ucapan-list { flex-grow: 1; overflow-y: auto; text-align: left; font-size: 0.65rem; }
 
 .music-control { position: fixed; bottom: 20px; right: 20px; background: var(--nude); border: 2px solid var(--gold); border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 200; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 .floral-border { position: absolute; inset: 0; border: 15px solid transparent; pointer-events: none; border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 Q 50 0 90 10 M90 10 Q 100 50 90 90 M90 90 Q 50 100 10 90 M10 90 Q 0 50 10 10' fill='none' stroke='%23c5a059' stroke-width='1.5'/%3E%3C/svg%3E") 30 stretch; }
