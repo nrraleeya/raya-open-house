@@ -29,8 +29,11 @@ body {
     border: 1px solid rgba(197, 160, 89, 0.2);
     z-index: 1;
 }
-.host-name span {
-    display: block;
+.host-name {
+    display: block; /* Forces the browser to respect line breaks */
+    line-height: 1.4; /* Gives space for the loopy calligraphy font */
+    margin: 10px 0;
+    width: 100%;
 }
 
 .floral-border {
