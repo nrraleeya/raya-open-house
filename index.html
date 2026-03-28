@@ -14,65 +14,96 @@
             
             <div class="page active batik-overlay" onclick="nextPage(0)">
                 <div class="floral-border"></div>
+                <div class="nav-container" style="justify-content: flex-end;">
+        <span class="btn-small-nav">Seterusnya ➔</span>
+    </div>
                 <div class="content">
                     <p class="ornament">✨</p>
-                    <h1 class="calligraphy gold-glow">Jemputan</h1>
-                    <p class="event-type">Majlis Rumah Terbuka</p>
-                    <hr class="gold-line">
-                    <h2 class="year-text">Aidilfitri 1447H</h2>
-                    <p class="tap-hint">Klik untuk Buka 💌</p>
+                    <h1 class="calligraphy gold-glow" style="font-size: 4.0rem;">Jemputan</h1>
+                    <div class="gold-line"></div>
+                    <h2 class="event-type">Majlis Rumah Terbuka</h2>
+                    <h2 class="event-type">Aidilfitri 1447H</h2>
+                    <div class="gold-line"></div>
+                    
+                    <div class="countdown-grid">
+                        <div class="pie-item"><div class="pie" id="pieD"></div><span>Hari</span><div class="val" id="valD">0</div></div>
+                        <div class="pie-item"><div class="pie" id="pieH"></div><span>Jam</span><div class="val" id="valH">0</div></div>
+                        <div class="pie-item"><div class="pie" id="pieM"></div><span>Min</span><div class="val" id="valM">0</div></div>
+                        <div class="pie-item"><div class="pie" id="pieS"></div><span>Saat</span><div class="val" id="valS">0</div></div>
+                    </div>
+
+                    <p class="tap-hint">SABTU | 4 APRIL 2026</p>
+                
                 </div>
             </div>
 
-            <div class="page next-page batik-overlay" onclick="nextPage(1)">
+            <div class="page next-page batik-overlay">
                 <div class="floral-border"></div>
-                <div class="content">
+                <div class="nav-container">
+                    <span class="btn-small-nav" onclick="prevPage(1)">⬅ Kembali</span>
+                    <span class="btn-small-nav" onclick="nextPage(1)">Seterusnya ➔</span>
+                </div>
+                <div class="content padded-content">
                     <p class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-                    <p class="salam">Assalamualaikum w.b.t,</p>
+                    <p class="salam">Assalamualaikum w.b.t & Salam Sejahtera,</p>
                     <p class="host-intro">Saya,</p>
-                    <h3 class="host-name calligraphy">Dr. Rozita Che Rodi & Keluarga</h3>
-                    <p class="formal-text">Menjemput <strong>YBhg. Dato' / Datin / Prof. / Dr. / Tuan / Puan</strong> seisi keluarga ke:</p>
+                    <h2 class="host-name calligraphy">Dr. Rozita Che Rodi & Keluarga</h2>
+                    <p class="formal-text">Dengan berbesar hatinya ingin menjemput <strong>YBhg. Dato' / Datin / Prof. / Dr. / Tuan / Puan</strong> seisi keluarga ke</p>
                     <h2 class="calligraphy gold-glow" style="font-size: 1.5rem;">Majlis Rumah Terbuka</h2>
-                    <h2 class="calligraphy gold-glow" style="font-size: 2.8rem;">Aidilfitri 1447H</h2>
-                    <div class="tap-hint-small">Seterusnya ➔</div>
+                    <h2 class="calligraphy gold-glow" style="font-size: 2.0rem;">Aidilfitri 1447H</h2>
+                    <p class="formal-text">Semoga kehadiran anda semua akan lebih menyerikan lagi majlis ini.</p>
+                    <p class="formal-text">Sekian, terima kasih.</p>
                 </div>
             </div>
 
-            <div class="page next-page batik-overlay" onclick="nextPage(2)">
+            <div class="page next-page batik-overlay">
                 <div class="floral-border"></div>
-                <div class="content">
+                <div class="nav-container">
+                    <span class="btn-small-nav" onclick="prevPage(2)">⬅ Kembali</span>
+                    <span class="btn-small-nav" onclick="nextPage(2)">Seterusnya ➔</span>
+                </div>
+                <div class="content padded-content">
                     <h2 class="section-title calligraphy">Atur Cara 🕌</h2>
                     <div class="info-row">
-                        <span class="label">📅 TARIKH</span>
-                        <p>Sabtu, 4 April 2026<br><small>(Minggu Ke-3 Syawal 1447H)</small></p>
+                        <span class="label gold-text">📅 TARIKH</span>
+                        <p class="formal-text">Sabtu, 4 April 2026<br><small>(Minggu Ke-3 Syawal 1447H)</small></p>
                     </div>
                     <div class="info-row">
-                        <span class="label">⏰ MASA</span>
-                        <p>1:00 PM - 7:00 PM</p>
+                        <span class="label gold-text">⏰ MASA</span>
+                        <p class="formal-text">1:00 PM - 7:00 PM</p>
                     </div>
                     <div class="info-row">
-                        <span class="label">📍 ALAMAT</span>
-                        <p class="address-text">No. 31, Jalan 4/10B, Seksyen 4 Tambahan, Bangi</p>
+                        <span class="label gold-text">📍 ALAMAT</span>
+                        <div class="address-block formal-text">
+                            No. 31, Jalan 4/10B<br>
+                            Seksyen 4 Tambahan<br>
+                            43650 Bandar Baru Bangi<br>
+                            Selangor Darul Ehsan
+                        </div>
                     </div>
                     <div class="theme-box">
-                        <span class="label">🌸 TEMA PAKAIAN</span>
-                        <p>Tradisional Floral</p>
+                        <span class="label gold-text">🌸 TEMA PAKAIAN</span>
+                        <p class="formal-text">Para jemputan dialu-alukan mengenakan pakaian Tradisional Floral</p>
                     </div>
-                    <div class="map-grid">
-                        <a href="https://waze.com/ul/hw282u5eg9" target="_blank" class="map-btn">WAZE</a>
-                        <a href="https://maps.app.goo.gl/UcQzrizokWznJ18y6?g_st=ic" target="_blank" class="map-btn">GOOGLE</a>
-                        <a href="https://maps.apple/p/fecrid8VSpr7y6" target="_blank" class="map-btn">APPLE</a>
+                    <div class="map-grid-boxed">
+                        <a href="https://waze.com/ul/hw282u5eg9" target="_blank" class="map-box-item">WAZE</a>
+                        <a href="https://maps.app.goo.gl/UcQzrizokWznJ18y6?g_st=ic" target="_blank" class="map-box-item">GOOGLE</a>
+                        <a href="https://maps.apple/p/fecrid8VSpr7y6" target="_blank" class="map-box-item">APPLE</a>
                     </div>
                 </div>
             </div>
 
             <div class="page next-page batik-overlay">
                 <div class="floral-border"></div>
-                <div class="content">
+                <div class="nav-container">
+                    <span class="btn-small-nav" onclick="prevPage(3)">⬅ Kembali</span>
+                    <span class="btn-small-nav" onclick="nextPage(3)">Seterusnya ➔</span>
+                </div>
+                <div class="content padded-content rsvp-page">
                     <h2 class="section-title calligraphy">RSVP ✍️</h2>
-                    <p class="formal-text">Sila isi eKAD di bawah, dan mohon sahkan kehadiran di RSVP sebelum <strong>02 April 2026</strong></p>
+                    <p class="formal-text">PENGESAHAN KEHADIRAN<br><small></small>(Sebelum 2 April 2026)</small></p>
                     <form id="rsvpForm">
-                        <input type="text" name="name" placeholder="Nama Penuh" required>
+                        <input type="text" name="name" placeholder="Nama Penuh" required class="rsvp-input">
                         <div class="rsvp-options">
                             <label class="radio-card">
                                 <input type="radio" name="attendance" value="Hadir" required>
@@ -80,73 +111,139 @@
                             </label>
                             <label class="radio-card">
                                 <input type="radio" name="attendance" value="Tidak Hadir" required>
-                                <span>Maaf ❌</span>
+                                <span>Tidak Hadir ❌</span>
                             </label>
                         </div>
-                        <input type="number" name="pax" min="1" max="20" value="1" required>
+                        <input type="number" name="pax" min="1" max="20" value="1" required class="rsvp-input">
                         <button type="submit" id="submitBtn">Hantar RSVP 🕊️</button>
                     </form>
+                </div>
+            </div>
+
+            <div class="page next-page batik-overlay">
+                <div class="floral-border"></div>
+                <div class="nav-container">
+                    <span class="btn-small-nav" onclick="prevPage(4)">⬅ Kembali</span>
+                </div>
+                <div class="content padded-content ucapan-page">
+                    <p class="doa-text-tiny">"Ya Allah Ya Rahman Ya Rahim, Kami berhimpun hari ini untuk Majlis Rumah Terbuka Aidilfitri 1447H. Maka Kau permudahkanlah majlis ini supaya ia berjalan dengan lancar, dikuatkan lagi ukhuwah antara kami juga rahmatilah kami. Aamin, Ya Rabbal A'lamin"</p>
+                    
+                    <div class="live-ucapan-box">
+                        <p class="label gold-text" style="font-size: 0.6rem;">📜 UCAPAN TETAMU</p>
+                        <div class="ucapan-list" id="displayUcapan">Memuatkan ucapan...</div>
+                        <div class="input-ucapan-row">
+                            <input type="text" id="inputNama" placeholder="Nama">
+                            <input type="text" id="inputMesej" placeholder="Ucapan...">
+                            <button onclick="sendUcapan()" id="btnUcapan">Hantar</button>
+                        </div>
+                    </div>
+
+                    <div class="contact-grid-neat">
+                        <p class="label gold-text" style="margin-bottom: 5px;">📞 NO. UNTUK DIHUBUNGI:</p>
+                        <p>013-7751606 (Ita)</p>
+                        <p>019-7244266 (Aini)</p>
+                        <p>019-3086118 (Amir)</p>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <audio id="rayaSong" loop preload="auto">
-        <source src="serumpun.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="rayaSong" loop preload="auto"><source src="serumpun.mp3" type="audio/mpeg"></audio>
 
     <script>
         const pages = document.querySelectorAll('.page');
-        const rsvpForm = document.getElementById('rsvpForm');
         const mySong = document.getElementById('rayaSong');
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyyhqMw87goqPSb6Ea5gbl_wDtCAQkaX5FwjHhDoYyjEWMv0zJIOPz8hGB2p_PWqJHD0A/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx6FXG1n13Sl5byXlyNu_VTWVC3nlaveAz0CoNX2w3AMhoz6RL2DTIfLf4dw2UWw0uyIA/exec'; 
 
-        function nextPage(currentIndex) {
-            // Fix: Attempt to play music on the very first interaction
-            if (currentIndex === 0 && mySong) {
-                mySong.play().catch(e => console.log("Audio play blocked by browser."));
-            }
-            
-            if (currentIndex < pages.length - 1) {
-                // 3D Flip Hinge Animation
-                pages[currentIndex].style.transform = "rotateY(-165deg)";
-                pages[currentIndex].style.zIndex = "0";
-                
-                const next = pages[currentIndex + 1];
-                next.classList.remove('next-page');
-                next.classList.add('active');
-                next.style.zIndex = "2";
+        function nextPage(index) {
+            if (index === 0 && mySong) mySong.play().catch(e => console.log("Audio blocked"));
+            if (index < pages.length - 1) {
+                pages[index].style.transform = "rotateY(-165deg)";
+                pages[index + 1].classList.remove('next-page');
+                pages[index + 1].classList.add('active');
             }
         }
 
-        rsvpForm.addEventListener('click', (e) => e.stopPropagation());
-        
-        rsvpForm.addEventListener('submit', e => {
+        function prevPage(index) {
+            if (index > 0) {
+                pages[index].classList.remove('active');
+                pages[index].classList.add('next-page');
+                pages[index - 1].style.transform = "rotateY(0deg)";
+            }
+        }
+
+        // Live Ucapan dari Google Sheets
+        function fetchUcapan() {
+            fetch(scriptURL)
+            .then(res => res.json())
+            .then(data => {
+                const box = document.getElementById('displayUcapan');
+                if(data.length === 0) {
+                    box.innerHTML = "<div style='opacity:0.5'>Belum ada ucapan lagi...</div>";
+                } else {
+                    box.innerHTML = data.map(u => `<div class="ucapan-item"><b>${u.nama}:</b> ${u.mesej}</div>`).join('');
+                }
+            });
+        }
+
+        function sendUcapan() {
+            const nama = document.getElementById('inputNama').value;
+            const mesej = document.getElementById('inputMesej').value;
+            const btn = document.getElementById('btnUcapan');
+            if(!nama || !mesej) return alert("Sila isi nama dan ucapan.");
+            
+            btn.disabled = true;
+            btn.innerText = "...";
+            const formData = new FormData();
+            formData.append("type", "ucapan");
+            formData.append("nama", nama);
+            formData.append("mesej", mesej);
+
+            fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData})
+            .then(() => {
+                document.getElementById('inputNama').value = '';
+                document.getElementById('inputMesej').value = '';
+                btn.disabled = false;
+                btn.innerText = "Hantar";
+                setTimeout(fetchUcapan, 2000);
+            });
+        }
+
+        // Countdown Logic
+        const targetDate = new Date("April 4, 2026 13:00:00").getTime();
+        setInterval(() => {
+            const diff = targetDate - new Date().getTime();
+            const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000), 
+                  m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
+            const u = {D:[d,30], H:[h,24], M:[m,60], S:[s,60]};
+            for (const k in u) {
+                document.getElementById(`val${k}`).innerText = u[k][0];
+                document.getElementById(`pie${k}`).style.background = `conic-gradient(#c5a059 ${(u[k][0]/u[k][1])*360}deg, transparent 0deg)`;
+            }
+        }, 1000);
+
+        // RSVP Form
+        document.getElementById('rsvpForm').addEventListener('submit', e => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
             btn.innerHTML = "Menghantar...";
-            btn.disabled = true;
+            const fd = new FormData(e.target);
+            fd.append("type", "rsvp");
 
-            fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(rsvpForm)})
-            .then(() => { 
-                btn.innerHTML = "Berjaya! ❤️"; 
-                alert("Terima kasih! RSVP anda telah diterima."); 
-            })
-            .catch(error => {
-                btn.innerHTML = "Ralat!";
-                btn.disabled = false;
-            });
+            fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd})
+            .then(() => { btn.innerHTML = "Berjaya! ❤️"; alert("RSVP Diterima!"); });
         });
 
-        // Colorful Petals Script
+        window.onload = fetchUcapan;
+
         function createPetal() {
             const petal = document.createElement('div');
-            const flowers = ['🌺', '🌸', '🌼', '🌷'];
-            petal.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+            petal.innerHTML = ['🌺', '🌸', '🌼', '🌷'][Math.floor(Math.random()*4)];
             petal.className = 'petal';
-            petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            petal.style.left = Math.random()*100 + 'vw';
+            petal.style.animationDuration = (Math.random()*3+4)+'s';
             document.body.appendChild(petal);
             setTimeout(() => petal.remove(), 6000);
         }
