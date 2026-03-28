@@ -63,21 +63,37 @@
                     <span class="btn-small-nav" onclick="nextPage(2)">Seterusnya →</span>
                 </div>
                 <div class="content padded centered-content">
-                    <h2 class="section-title calligraphy">Atur Cara Majlis</h2>
+                    <h2 class="section-title calligraphy gold-glow" style="font-size: 2rem; margin-bottom: 20px;">Atur Cara Majlis</h2>
                     
-                    <div class="info-group">
-                        <div class="info-label"><span class="emoji">📅</span> <span class="label gold-text">TARIKH</span></div>
-                        <div class="info-data">Sabtu, 4 April 2026<br><small><i>(Minggu Ke-3 Syawal 1447H)</i></small></div>
+                    <div class="info-group-calligraphy">
+                        <div class="info-label-calligraphy">
+                            <span class="emoji">📅</span> <span class="label gold-text">TARIKH</span>
+                        </div>
+                        <div class="info-data-calligraphy gold-glow">
+                            Sabtu, 4 April 2026<br>
+                            <small class="script-small">(Minggu Ke-3 Syawal 1447H)</small>
+                        </div>
                     </div>
 
-                    <div class="info-group">
-                        <div class="info-label"><span class="emoji">⏰</span> <span class="label gold-text">MASA</span></div>
-                        <div class="info-data">1.00 PM - 7.00 PM</div>
+                    <div class="info-group-calligraphy">
+                        <div class="info-label-calligraphy">
+                            <span class="emoji">⏰</span> <span class="label gold-text">MASA</span>
+                        </div>
+                        <div class="info-data-calligraphy gold-glow">
+                            1.00 PM - 7.00 PM
+                        </div>
                     </div>
 
-                    <div class="info-group">
-                        <div class="info-label"><span class="emoji">📍</span> <span class="label gold-text">ALAMAT</span></div>
-                        <div class="info-data">No. 31, Jalan 4/10B, Seksyen 4 Tambahan<br>43650 Bandar Baru Bangi, Selangor</div>
+                    <div class="info-group-calligraphy">
+                        <div class="info-label-calligraphy">
+                            <span class="emoji">📍</span> <span class="label gold-text">ALAMAT</span>
+                        </div>
+                        <div class="info-data-calligraphy gold-glow address-data-calligraphy">
+                            No. 31, Jalan 4/10B,<br>
+                            Seksyen 4 Tambahan,<br>
+                            43650 Bandar Baru Bangi,<br>
+                            Selangor Darul Ehsan
+                        </div>
                     </div>
 
                     <div class="map-grid-boxed">
@@ -87,8 +103,10 @@
                     </div>
 
                     <div class="theme-box">
-                        <div class="info-label"><span class="emoji">🌸</span> <span class="label gold-text">TEMA PAKAIAN</span></div>
-                        <p class="formal-text" style="font-size: 0.75rem; margin:0;">Para jemputan dialu-alukan mengenakan pakaian Tradisional Floral</p>
+                        <div class="info-label-calligraphy">
+                            <span class="emoji">🌸</span> <span class="label gold-text">TEMA PAKAIAN</span>
+                        </div>
+                        <p class="formal-text theme-text">Para jemputan dialu-alukan mengenakan pakaian Tradisional Floral</p>
                     </div>
                 </div>
             </div>
@@ -111,7 +129,7 @@
                         <input type="number" name="pax" min="1" max="20" placeholder="Bilangan Hadir" required class="rsvp-input">
                         <button type="submit" id="submitBtn">Hantar RSVP 🕊️</button>
                     </form>
-                    <p class="doa-text-tiny" style="margin-top: 20px;">"Ya Allah Ya Rahman Ya Rahim, Kami berhimpun hari ini untuk Majlis Rumah Terbuka Aidilfitri 1447H. Maka Kau permudahkanlah majlis ini supaya ia berjalan dengan lancar, dikuatkan lagi ukhuwah antara kami juga rahmatilah kami." <br> Aamin, Ya Rabbal A'lamin</p>
+                    <p class="doa-text-tiny" style="margin-top: 25px;">"Ya Allah Ya Rahman Ya Rahim, Kami berhimpun hari ini untuk Majlis Rumah Terbuka Aidilfitri 1447H. Maka Kau permudahkanlah majlis ini supaya ia berjalan dengan lancar, dikuatkan lagi ukhuwah antara kami juga rahmatilah kami. Aamin, Ya Rabbal A'lamin"</p>
                 </div>
             </div>
 
@@ -132,7 +150,7 @@
                     </div>
 
                     <div class="contact-grid-neat">
-                        <p class="label gold-text" style="margin-bottom: 5px;">📞 NO. UNTUK DIHUBUNGI:</p>
+                        <p class="label gold-text" style="margin-bottom: 8px;">📞 NO. UNTUK DIHUBUNGI:</p>
                         <p><span class="black-phone">013-7751606</span> <span class="gold-text">(Ita)</span></p>
                         <p><span class="black-phone">019-7244266</span> <span class="gold-text">(Aini)</span></p>
                         <p><span class="black-phone">019-3086118</span> <span class="gold-text">(Amir)</span></p>
@@ -225,7 +243,7 @@
             fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd}).then(() => { btn.innerHTML = "Berjaya! ❤️"; alert("RSVP Diterima!"); });
         });
 
-        // BUNGA GUGUR SCRIPT
+        // BUNGA GUGUR SCRIPT (RESTORED)
         function createPetal() {
             const petal = document.createElement('div');
             petal.innerHTML = ['🌺', '🌸', '🌼', '🌷', '✨'][Math.floor(Math.random() * 5)];
