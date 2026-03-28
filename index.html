@@ -14,10 +14,10 @@
             
             <div class="page active batik-overlay" onclick="nextPage(0)">
                 <div class="floral-border"></div>
-                <div class="nav-container right-align">
+                <div class="nav-container" style="justify-content: flex-end;">
                     <span class="btn-small-nav">Seterusnya →</span>
                 </div>
-                <div class="content centered-content">
+                <div class="content">
                     <p class="ornament">✨</p>
                     <h1 class="calligraphy gold-glow" style="font-size: 4.5rem; margin-bottom: 0;">Jemputan</h1>
                     <div class="gold-line"></div>
@@ -41,7 +41,7 @@
                     <span class="btn-small-nav" onclick="prevPage(1)">← Kembali</span>
                     <span class="btn-small-nav" onclick="nextPage(1)">Seterusnya →</span>
                 </div>
-                <div class="content padded centered-content">
+                <div class="content padded">
                     <div class="bismillah-container">
                         <p class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
                         <div class="bismillah-ornament"></div>
@@ -63,19 +63,19 @@
                     <span class="btn-small-nav" onclick="prevPage(2)">← Kembali</span>
                     <span class="btn-small-nav" onclick="nextPage(2)">Seterusnya →</span>
                 </div>
-                <div class="content padded centered-content">
+                <div class="content padded">
                     <h2 class="section-title calligraphy">Atur Cara Majlis</h2>
                     <div class="info-row">
                         <span class="label gold-text">📅 TARIKH</span>
-                        <p class="gold-text" style="font-size: 0.85rem;">Sabtu, 4 April 2026<br><small><i>(Minggu Ke-3 Syawal 1447H)</i></small></p>
+                        <p class="gold-text">Sabtu, 4 April 2026<br><small><i>(Minggu Ke-3 Syawal 1447H)</i></small></p>
                     </div>
                     <div class="info-row">
                         <span class="label gold-text">⏰ MASA</span>
-                        <p class="gold-text" style="font-size: 0.85rem;">1.00 PM - 7.00 PM</p>
+                        <p class="gold-text">1.00 PM - 7.00 PM</p>
                     </div>
                     <div class="info-row">
                         <span class="label gold-text">📍 ALAMAT</span>
-                        <div class="address-block gold-text" style="font-size: 0.85rem;">No. 31, Jalan 4/10B<br>Seksyen 4 Tambahan<br>43650 Bandar Baru Bangi<br>Selangor Darul Ehsan</div>
+                        <div class="address-block gold-text">No. 31, Jalan 4/10B<br>Seksyen 4 Tambahan<br>43650 Bandar Baru Bangi<br>Selangor Darul Ehsan</div>
                     </div>
                     <div class="map-grid-boxed">
                         <a href="https://waze.com/ul/hw282u5eg9" target="_blank" class="map-box-item">WAZE</a>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="theme-box">
                         <span class="label gold-text">🌸 TEMA PAKAIAN</span>
-                        <p class="formal-text">Para jemputan dialu-alukan mengenakan pakaian Tradisional Floral</p>
+                        <p class="formal-text" style="font-size: 0.75rem;">Para jemputan dialu-alukan mengenakan pakaian Tradisional Floral</p>
                     </div>
                 </div>
             </div>
@@ -95,7 +95,7 @@
                     <span class="btn-small-nav" onclick="prevPage(3)">← Kembali</span>
                     <span class="btn-small-nav" onclick="nextPage(3)">Seterusnya →</span>
                 </div>
-                <div class="content padded centered-content">
+                <div class="content padded">
                     <h2 class="section-title calligraphy">RSVP ✍️</h2>
                     <p class="formal-text">PENGESAHAN KEHADIRAN<br><small>(Sebelum 2 April 2026)</small></p>
                     <form id="rsvpForm" class="rsvp-stacked-form">
@@ -107,7 +107,7 @@
                         <input type="number" name="pax" min="1" max="20" placeholder="Bilangan Hadir" required class="rsvp-input">
                         <button type="submit" id="submitBtn">Hantar RSVP 🕊️</button>
                     </form>
-                    <p class="doa-text-tiny" style="margin-top: 20px;">"Ya Allah Ya Rahman Ya Rahim, Kami berhimpun hari ini untuk Majlis Rumah Terbuka Aidilfitri 1447H. Maka Kau permudahkanlah majlis ini supaya ia berjalan dengan lancar, dikuatkan lagi ukhuwah antara kami juga rahmatilah kami. Aamin, Ya Rabbal A'lamin"</p>
+                    <p class="doa-text-tiny">"Ya Allah Ya Rahman Ya Rahim, Kami berhimpun hari ini untuk Majlis Rumah Terbuka Aidilfitri 1447H. Maka Kau permudahkanlah majlis ini supaya ia berjalan dengan lancar, dikuatkan lagi ukhuwah antara kami juga rahmatilah kami. Aamin, Ya Rabbal A'lamin"</p>
                 </div>
             </div>
 
@@ -116,7 +116,7 @@
                 <div class="nav-container">
                     <span class="btn-small-nav" onclick="prevPage(4)">← Kembali</span>
                 </div>
-                <div class="content padded centered-content">
+                <div class="content padded">
                     <div class="live-ucapan-box">
                         <p class="label gold-text" style="font-size: 0.6rem;">📜 UCAPAN TETAMU</p>
                         <div class="ucapan-list" id="displayUcapan">Memuatkan...</div>
@@ -141,7 +141,7 @@
                                 <path d="M45 45 V35 Q45 30 50 30 T55 35 V45" stroke="#c5a059" stroke-width="1"/>
                             </svg>
                         </div>
-                        <h1 class="calligraphy gold-glow" style="font-size: 1.8rem; margin:0;">Maaf Zahir & Batin</h1>
+                        <h1 class="calligraphy gold-glow big-eid-wish">Maaf Zahir & Batin</h1>
                         <div class="gold-line-small"></div>
                     </div>
                 </div>
@@ -178,8 +178,6 @@
             if (mySong.paused) { mySong.play(); musicIcon.innerText = "🔇"; } 
             else { mySong.pause(); musicIcon.innerText = "🎵"; }
         }
-
-        // Live Ucapan Logic
         function fetchUcapan() {
             fetch(scriptURL).then(res => res.json()).then(data => {
                 const box = document.getElementById('displayUcapan');
@@ -197,8 +195,6 @@
                 btn.disabled = false; setTimeout(fetchUcapan, 1500);
             });
         }
-
-        // Countdown Logic
         const targetDate = new Date("April 4, 2026 13:00:00").getTime();
         setInterval(() => {
             const diff = targetDate - new Date().getTime();
@@ -212,15 +208,12 @@
                 }
             }
         }, 1000);
-
-        // RSVP Script
         document.getElementById('rsvpForm').addEventListener('submit', e => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn'); btn.innerHTML = "Menghantar...";
             const fd = new FormData(e.target); fd.append("type", "rsvp");
             fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd}).then(() => { btn.innerHTML = "Berjaya! ❤️"; alert("RSVP Diterima!"); });
         });
-
         window.onload = fetchUcapan;
     </script>
 </body>
