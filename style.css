@@ -21,8 +21,8 @@ body {
     background-color: var(--nude);
     color: var(--text);
     display: flex; flex-direction: column;
-    justify-content: center;
-    align-items: center; 
+    justify-content: center; /* CENTER VERTICAL */
+    align-items: center;    /* CENTER HORIZONTAL */
     box-shadow: 5px 10px 30px rgba(0,0,0,0.1);
     border: 1px solid rgba(197, 160, 89, 0.2);
     z-index: 1;
@@ -31,12 +31,12 @@ body {
 .page.active { z-index: 2; transform: rotateY(0deg); visibility: visible; }
 .page.next-page { opacity: 0; visibility: hidden; }
 
-.content { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.content { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; padding: 20px; position: relative; }
 .padded { padding: 40px 25px; }
 
 .calligraphy { font-family: 'Pinyon Script', cursive; color: var(--gold); line-height: 1.2; }
 .gold-glow { text-shadow: 0 0 5px rgba(197, 160, 89, 0.2); }
-.gold-line { width: 45%; height: 1px; background: var(--gold); margin: 10px auto; }
+.gold-line { width: 45%; height: 1px; background: var(--gold); margin: 12px auto; }
 
 /* Bismillah */
 .bismillah-container { margin-bottom: 10px; }
@@ -51,23 +51,55 @@ body {
 .pie::after { content: ""; position: absolute; inset: 4px; background: var(--nude); border-radius: 50%; z-index: 1; }
 .val { position: relative; z-index: 2; font-size: 0.9rem; font-weight: 600; color: var(--text); }
 
-/* Navigation */
+/* Navigation (Fixed Back to Images) */
 .nav-container { position: absolute; top: 30px; width: 85%; display: flex; justify-content: space-between; z-index: 10; }
 .right-align { justify-content: flex-end; }
-.btn-small-nav { border: 1px solid var(--gold); padding: 5px 12px; font-size: 0.7rem; color: var(--gold); border-radius: 4px; cursor: pointer; }
+.btn-small-nav { border: 1px solid var(--gold); padding: 5px 12px; font-size: 0.7rem; color: var(--gold); border-radius: 4px; cursor: pointer; background: transparent; }
 
-/* Text Style */
-.formal-text { font-size: 0.8rem; line-height: 1.5; margin: 8px 0; }
+/* Global Text */
+.formal-text { font-size: 0.8rem; line-height: 1.5; margin: 8px 0; color: var(--text); }
 .gold-text { color: var(--gold) !important; font-weight: 600; }
 .black-phone { color: #000 !important; font-weight: 600; }
 
-/* Page 3 Specific */
-.info-row { margin-bottom: 10px; }
+/* --- PAGE 3: ATUR CARA STYLING (MATCH IMAGE) --- */
+.page3-layout { gap: 10px; }
+.info-group { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; }
+.info-label { display: flex; align-items: center; gap: 6px; }
+.label { font-size: 0.7rem; letter-spacing: 1px; }
+.emoji { font-size: 1rem; }
+.info-data { font-size: 0.85rem; color: var(--text); line-height: 1.4; }
+
+.address-group { gap: 6px; }
+.address-data { max-width: 90%; margin: 0 auto; }
+
 .map-grid-boxed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 90%; margin: 15px 0; }
 .map-box-item { border: 1px solid var(--gold); padding: 7px; font-size: 0.65rem; color: var(--gold); text-decoration: none; border-radius: 4px; font-weight: 600; }
-.theme-box { border: 1px dashed var(--gold); padding: 10px; width: 90%; border-radius: 8px; background: rgba(197, 160, 89, 0.05); }
 
-/* RSVP Specific */
+/* The dashed theme box restored */
+.theme-box { 
+    border: 1px dashed var(--gold); 
+    padding: 12px 10px; 
+    width: 90%; 
+    border-radius: 8px; 
+    background: rgba(197, 160, 89, 0.05); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 8px;
+}
+.theme-label { border-bottom: none; }
+.theme-text { font-size: 0.75rem !important; margin: 0; }
+
+/* Flower Decorations (optional, matching image) */
+.decor-flower { position: absolute; font-size: 0.9rem; opacity: 0.6; pointer-events: none; }
+.flower-top-left { top: 70px; left: 60px; }
+.flower-mid-left { top: 160px; left: 40px; }
+.flower-mid-right { top: 320px; right: 40px; }
+.flower-bottom-mid { bottom: 130px; left: 50%; transform: translateX(-50%); }
+.flower-bottom-left { bottom: 30px; left: 40px; font-size: 1.1rem; }
+/* --- END PAGE 3 STYLING --- */
+
+/* RSVP */
 .rsvp-stacked-form { width: 100%; max-width: 270px; display: flex; flex-direction: column; gap: 10px; }
 .rsvp-input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; text-align: center; font-family: inherit; }
 .rsvp-options-stacked { width: 100%; display: flex; flex-direction: column; gap: 8px; }
