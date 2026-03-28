@@ -4,6 +4,8 @@
     --text: #4a3f35;
 }
 
+* { box-sizing: border-box; }
+
 body {
     margin: 0; background-color: #f0ebe3;
     height: 100vh; display: flex;
@@ -12,7 +14,7 @@ body {
     overflow: hidden;
 }
 
-.main-wrapper { width: 380px; max-width: 95vw; height: 680px; perspective: 2500px; }
+.main-wrapper { width: 380px; max-width: 95vw; height: 660px; perspective: 2000px; }
 .scroll-stack { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; }
 
 .page {
@@ -24,97 +26,78 @@ body {
     background-color: var(--nude);
     color: var(--text);
     display: flex; flex-direction: column;
+    justify-content: center; align-items: center; /* MIDDLE CENTER */
     box-shadow: 5px 10px 30px rgba(0,0,0,0.1);
     border: 1px solid rgba(197, 160, 89, 0.2);
     z-index: 1;
-    overflow: hidden;
 }
 
-.page.active { z-index: 2; transform: rotateY(0deg); opacity: 1; visibility: visible; }
+.page.active { z-index: 2; transform: rotateY(0deg); visibility: visible; }
 .page.next-page { opacity: 0; visibility: hidden; }
 
-.floral-border {
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    pointer-events: none; border: 20px solid transparent;
-    border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 Q 50 0 90 10 M90 10 Q 100 50 90 90 M90 90 Q 50 100 10 90 M10 90 Q 0 50 10 10' fill='none' stroke='%23c5a059' stroke-width='2'/%3E%3Ccircle cx='10' cy='10' r='4' fill='%23c5a059'/%3E%3Ccircle cx='90' cy='10' r='4' fill='%23c5a059'/%3E%3Ccircle cx='90' cy='90' r='4' fill='%23c5a059'/%3E%3Ccircle cx='10' cy='90' r='4' fill='%23c5a059'/%3E%3C/svg%3E") 30 stretch;
-}
+.content { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.padded { padding: 40px 25px; }
 
-/* Page 1 Layout Fix */
-.page1-layout {
-    height: 100%; display: flex; flex-direction: column;
-    justify-content: space-between;
-    padding: 70px 30px 50px 30px !important;
-    box-sizing: border-box;
-}
+.calligraphy { font-family: 'Pinyon Script', cursive; color: var(--gold); }
+.gold-glow { text-shadow: 0 0 5px rgba(197, 160, 89, 0.2); }
+.gold-line { width: 40%; height: 1px; background: var(--gold); margin: 10px auto; }
 
-.content { padding: 30px; text-align: center; width: 100%; box-sizing: border-box; }
-.padded-content { padding: 50px 30px; }
+/* Bismillah Ornament */
+.bismillah-container { margin-bottom: 10px; text-align: center; }
+.bismillah { font-size: 1.1rem; color: var(--gold); margin-bottom: 5px; }
+.bismillah-ornament { width: 100px; height: 1px; background: var(--gold); margin: 0 auto; position: relative; }
+.bismillah-ornament::after { content: "✽"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--nude); padding: 0 5px; color: var(--gold); font-size: 0.8rem; }
 
-.calligraphy { font-family: 'Pinyon Script', cursive; color: var(--gold); line-height: 1.2; }
-.gold-glow { text-shadow: 0 0 8px rgba(197, 160, 89, 0.2); margin: 5px 0; }
-.gold-text { color: var(--gold) !important; font-weight: 600; }
-.gold-line { width: 50%; height: 2px; background: var(--gold); margin: 12px auto; }
+/* Countdown */
+.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 90%; margin: 10px 0; }
+.pie-item { display: flex; flex-direction: column; align-items: center; font-size: 0.6rem; color: var(--gold); font-weight: 600; }
+.pie { width: 50px; height: 50px; border-radius: 50%; background: #eee; position: relative; }
+.pie::after { content: ""; position: absolute; inset: 4px; background: var(--nude); border-radius: 50%; }
+.val { position: absolute; width: 100%; top: 15px; text-align: center; font-size: 0.8rem; z-index: 2; }
 
-/* Bismillah Style */
-.bismillah-container { margin-bottom: 15px; display: flex; flex-direction: column; align-items: center; }
-.bismillah { font-size: 1.1rem; margin-bottom: 5px; color: var(--gold); }
-.bismillah-ornament { 
-    width: 60%; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); position: relative; 
-}
-.bismillah-ornament::after { 
-    content: "✽"; color: var(--gold); position: absolute; top: -8px; left: 50%; transform: translateX(-50%); background: var(--nude); padding: 0 5px; font-size: 0.8rem; 
-}
-
-/* Countdown Pies */
-.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-top: 10px; width: 100%; }
-.pie-item { position: relative; display: flex; flex-direction: column; align-items: center; font-size: 0.55rem; color: var(--gold); font-weight: 600; }
-.pie { width: 50px; height: 50px; background: #eee; border-radius: 50%; position: relative; }
-.pie::after { content: ""; position: absolute; top: 4px; left: 4px; width: 42px; height: 42px; background: var(--nude); border-radius: 50%; }
-.val { position: absolute; top: 16px; width: 100%; text-align: center; font-size: 0.8rem; font-weight: 600; z-index: 5; }
-
-/* Nav Buttons */
-.nav-container { position: absolute; top: 35px; width: 85%; display: flex; justify-content: space-between; z-index: 10; left: 7.5%; }
+/* Nav */
+.nav-container { position: absolute; top: 25px; width: 85%; display: flex; justify-content: space-between; z-index: 10; }
 .right-align { justify-content: flex-end; }
-.btn-small-nav { border: 1px solid var(--gold); padding: 5px 10px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; cursor: pointer; font-weight: 600; background: transparent; }
+.btn-small-nav { border: 1px solid var(--gold); padding: 4px 10px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; cursor: pointer; }
 
-.formal-text { font-size: 0.78rem; line-height: 1.5; margin: 8px 0; }
-.label { display: block; font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 3px; }
-.theme-box { border: 1px dashed var(--gold); padding: 10px; border-radius: 8px; width: 90%; background: rgba(197, 160, 89, 0.05); margin: 15px auto; }
-.map-grid-boxed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 95%; margin: 15px auto; }
-.map-box-item { border: 1px solid var(--gold); padding: 8px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; text-decoration: none; font-weight: 600; }
+/* Global Text */
+.formal-text { font-size: 0.75rem; line-height: 1.5; margin: 5px 0; }
+.label { font-size: 0.7rem; font-weight: 600; }
+.gold-text { color: var(--gold); }
+.address-block { margin-top: 5px; line-height: 1.4; }
 
-/* RSVP Fix */
-.rsvp-stacked-form { width: 100%; max-width: 280px; display: flex; flex-direction: column; gap: 10px; align-items: center; margin: 0 auto; }
-.rsvp-input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 10px; text-align: center; box-sizing: border-box; }
-.rsvp-options-stacked { width: 100%; display: flex; flex-direction: column; gap: 6px; }
-.radio-card-stacked { width: 100%; border: 1px solid var(--gold); padding: 10px; border-radius: 10px; cursor: pointer; font-size: 0.8rem; box-sizing: border-box; background: #fff; }
+/* Maps & Theme */
+.map-grid-boxed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 90%; margin: 15px 0; }
+.map-box-item { border: 1px solid var(--gold); padding: 6px; font-size: 0.65rem; color: var(--gold); text-decoration: none; border-radius: 4px; font-weight: 600; }
+.theme-box { border: 1px dashed var(--gold); padding: 8px; width: 85%; border-radius: 8px; background: rgba(197,160,89,0.03); }
+
+/* RSVP */
+.rsvp-stacked-form { width: 100%; max-width: 260px; display: flex; flex-direction: column; gap: 8px; }
+.rsvp-input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; text-align: center; }
+.rsvp-options-stacked { width: 100%; display: flex; flex-direction: column; gap: 5px; }
+.radio-card-stacked { border: 1px solid var(--gold); padding: 10px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; background: #fff; width: 100%; }
 .radio-card-stacked input { display: none; }
-.radio-card-stacked:has(input:checked) { background: var(--gold); color: white; }
-#submitBtn { width: 100%; background: var(--gold); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; cursor: pointer; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-.doa-text-tiny { font-size: 0.6rem; line-height: 1.3; font-style: italic; color: #666; margin-top: 15px; }
+.radio-card-stacked:has(input:checked) { background: var(--gold); color: #fff; }
+#submitBtn { width: 100%; background: var(--gold); color: #fff; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+.doa-text-tiny { font-size: 0.6rem; font-style: italic; color: #777; margin-top: 10px; line-height: 1.3; }
 
-/* Ucapan Section Fix */
-.ucapan-page { padding: 35px 20px 10px 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.live-ucapan-box { width: 100%; max-width: 320px; background: #fff; border: 1px solid var(--gold); padding: 12px; border-radius: 12px; height: 180px; display: flex; flex-direction: column; box-sizing: border-box; }
-.ucapan-list { flex-grow: 1; overflow-y: auto; text-align: left; font-size: 0.65rem; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-right: 4px; }
-.ucapan-item { padding: 4px 0; border-bottom: 1px solid #f9f9f9; }
-.input-ucapan-row { display: flex; flex-wrap: wrap; gap: 4px; width: 100%; }
-.input-ucapan-row input { font-size: 0.65rem; padding: 6px; border: 1px solid #ddd; border-radius: 5px; flex: 1; min-width: 60px; box-sizing: border-box; }
-.input-ucapan-row button { background: var(--gold); color: white; border: none; font-size: 0.65rem; padding: 6px 10px; border-radius: 5px; font-weight: 600; }
+/* Ucapan */
+.live-ucapan-box { width: 90%; border: 1px solid var(--gold); border-radius: 12px; padding: 12px; background: #fff; height: 180px; display: flex; flex-direction: column; margin-bottom: 10px; }
+.ucapan-list { flex-grow: 1; overflow-y: auto; text-align: left; font-size: 0.65rem; margin-bottom: 5px; }
+.ucapan-item { padding: 3px 0; border-bottom: 1px solid #eee; }
+.input-ucapan-row { display: flex; gap: 4px; }
+.input-ucapan-row input { flex: 1; font-size: 0.65rem; padding: 6px; border: 1px solid #ddd; border-radius: 4px; min-width: 0; }
+.input-ucapan-row button { background: var(--gold); color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.65rem; cursor: pointer; }
 
-.contact-grid-neat { text-align: center; font-size: 0.75rem; line-height: 1.4; margin: 5px 0; }
-.black-phone { color: #000 !important; font-weight: 600; }
+/* Contact & Footer */
+.contact-grid-neat { font-size: 0.75rem; line-height: 1.4; margin-bottom: 10px; }
+.black-phone { color: #000; font-weight: 600; }
+.closing-section { display: flex; flex-direction: column; align-items: center; opacity: 0.8; }
+.gold-line-small { width: 20px; height: 1px; background: var(--gold); margin-top: 5px; }
 
-/* Closing Section */
-.closing-section { display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 0; }
-.raya-vector { opacity: 0.4; transform: scale(0.7); margin-bottom: -5px; }
-.big-eid-wish { font-size: 1.8rem !important; margin: 0 !important; color: var(--gold); }
-.gold-line-small { width: 25px; height: 1px; background: var(--gold); margin-top: 5px; opacity: 0.4; }
-
-/* Music Floating Control */
+/* Music Floating */
 .music-control { position: fixed; bottom: 20px; right: 20px; background: var(--nude); border: 2px solid var(--gold); border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 200; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
-.petal { position: fixed; top: -5vh; z-index: 100; pointer-events: none; animation: fall linear forwards; }
-@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+.floral-border { position: absolute; inset: 0; border: 15px solid transparent; pointer-events: none; border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 Q 50 0 90 10 M90 10 Q 100 50 90 90 M90 90 Q 50 100 10 90 M10 90 Q 0 50 10 10' fill='none' stroke='%23c5a059' stroke-width='1.5'/%3E%3C/svg%3E") 30 stretch; }
 
 .batik-overlay { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30c0-10 10-10 10-20s-10-10-10-10-10 0-10 10 10 10 10 20z' fill='%23c5a059' fill-opacity='0.03'/%3E%3C/svg%3E"); }
