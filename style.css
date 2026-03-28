@@ -11,59 +11,27 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
-/* Layout khas untuk Page 1 */
-.page1-layout {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Tolak info ke atas & countdown ke bawah */
-    padding: 80px 30px 60px 30px !important; /* Beri ruang atas dan bawah */
-    box-sizing: border-box;
-}
 
-.main-info {
-    margin-top: 10px; /* Adjust sikit untuk naikkan teks */
-}
-
-.countdown-section-bottom {
-    margin-top: 40px; /* Jarakkan dari teks atas */
-    width: 100%;
-}
-
-/* Pastikan Countdown Grid tetap center */
-.countdown-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    justify-items: center;
-    width: 100%;
-}
-
-/* Kekalkan saiz Jemputan yang besar */
-.calligraphy.gold-glow {
-    line-height: 1;
-}
-
-.gold-line {
-    margin: 15px auto;
-}
 .main-wrapper { width: 380px; max-width: 95vw; height: 680px; perspective: 2500px; }
 .scroll-stack { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; }
 
 .page {
     position: absolute; width: 100%; height: 100%;
     backface-visibility: hidden;
-    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: left center;
     border-radius: 15px;
     background-color: var(--nude);
     color: var(--text);
     display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
     box-shadow: 5px 10px 30px rgba(0,0,0,0.1);
     border: 1px solid rgba(197, 160, 89, 0.2);
     z-index: 1;
+    overflow: hidden;
 }
+
+.page.active { z-index: 2; transform: rotateY(0deg); opacity: 1; visibility: visible; }
+.page.next-page { opacity: 0; visibility: hidden; }
 
 .floral-border {
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -71,243 +39,82 @@ body {
     border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 Q 50 0 90 10 M90 10 Q 100 50 90 90 M90 90 Q 50 100 10 90 M10 90 Q 0 50 10 10' fill='none' stroke='%23c5a059' stroke-width='2'/%3E%3Ccircle cx='10' cy='10' r='4' fill='%23c5a059'/%3E%3Ccircle cx='90' cy='10' r='4' fill='%23c5a059'/%3E%3Ccircle cx='90' cy='90' r='4' fill='%23c5a059'/%3E%3Ccircle cx='10' cy='90' r='4' fill='%23c5a059'/%3E%3C/svg%3E") 30 stretch;
 }
 
-.page.active { z-index: 2; transform: rotateY(0deg); opacity: 1; }
-.page.next-page { opacity: 0; }
+/* Page 1 Layout Fix */
+.page1-layout {
+    height: 100%; display: flex; flex-direction: column;
+    justify-content: space-between;
+    padding: 70px 30px 50px 30px !important;
+    box-sizing: border-box;
+}
 
 .content { padding: 30px; text-align: center; width: 100%; box-sizing: border-box; }
-.padded-content { padding: 45px 35px; }
+.padded-content { padding: 50px 30px; }
 
-.calligraphy { font-family: 'Pinyon Script', cursive; color: var(--gold); }
+.calligraphy { font-family: 'Pinyon Script', cursive; color: var(--gold); line-height: 1.2; }
 .gold-glow { text-shadow: 0 0 8px rgba(197, 160, 89, 0.2); margin: 5px 0; }
 .gold-text { color: var(--gold) !important; font-weight: 600; }
+.gold-line { width: 50%; height: 2px; background: var(--gold); margin: 12px auto; }
 
-.gold-line { width: 50%; height: 2px; background: var(--gold); margin: 10px auto; }
-
-/* Bismillah Ornament */
-.bismillah-container { margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; }
+/* Bismillah Style */
+.bismillah-container { margin-bottom: 15px; display: flex; flex-direction: column; align-items: center; }
 .bismillah { font-size: 1.1rem; margin-bottom: 5px; color: var(--gold); }
 .bismillah-ornament { 
-    width: 60%; height: 2px; 
-    background: linear-gradient(90deg, transparent, var(--gold), transparent); 
-    position: relative; 
+    width: 60%; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); position: relative; 
 }
 .bismillah-ornament::after { 
-    content: "✽"; color: var(--gold); position: absolute; 
-    top: -8px; left: 50%; transform: translateX(-50%); 
-    background: var(--nude); padding: 0 5px; font-size: 0.8rem; 
+    content: "✽"; color: var(--gold); position: absolute; top: -8px; left: 50%; transform: translateX(-50%); background: var(--nude); padding: 0 5px; font-size: 0.8rem; 
 }
 
-/* 4-Pie Countdown */
-.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin: 15px 0; }
-.pie-item { position: relative; display: flex; flex-direction: column; align-items: center; font-size: 0.55rem; color: var(--gold); }
+/* Countdown Pies */
+.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-top: 10px; width: 100%; }
+.pie-item { position: relative; display: flex; flex-direction: column; align-items: center; font-size: 0.55rem; color: var(--gold); font-weight: 600; }
 .pie { width: 50px; height: 50px; background: #eee; border-radius: 50%; position: relative; }
 .pie::after { content: ""; position: absolute; top: 4px; left: 4px; width: 42px; height: 42px; background: var(--nude); border-radius: 50%; }
 .val { position: absolute; top: 16px; width: 100%; text-align: center; font-size: 0.8rem; font-weight: 600; z-index: 5; }
 
-.nav-container { position: absolute; top: 35px; width: 85%; display: flex; justify-content: space-between; z-index: 10; }
-.btn-small-nav { border: 1px solid var(--gold); padding: 5px 10px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; cursor: pointer; font-weight: 600; }
+/* Nav Buttons */
+.nav-container { position: absolute; top: 35px; width: 85%; display: flex; justify-content: space-between; z-index: 10; left: 7.5%; }
+.right-align { justify-content: flex-end; }
+.btn-small-nav { border: 1px solid var(--gold); padding: 5px 10px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; cursor: pointer; font-weight: 600; background: transparent; }
 
-.formal-text { font-size: 0.8rem; line-height: 1.5; margin: 10px 0; }
+.formal-text { font-size: 0.78rem; line-height: 1.5; margin: 8px 0; }
 .label { display: block; font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 3px; }
+.theme-box { border: 1px dashed var(--gold); padding: 10px; border-radius: 8px; width: 90%; background: rgba(197, 160, 89, 0.05); margin: 15px auto; }
+.map-grid-boxed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 95%; margin: 15px auto; }
+.map-box-item { border: 1px solid var(--gold); padding: 8px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; text-decoration: none; font-weight: 600; }
 
-.theme-box { border: 1px dashed var(--gold); padding: 8px; border-radius: 8px; width: 90%; background: rgba(197, 160, 89, 0.05); margin: 5px auto; }
-
-.map-grid-boxed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 90%; margin: 15px auto; }
-.map-box-item { border: 1px solid var(--gold); padding: 8px; font-size: 0.65rem; color: var(--gold); border-radius: 4px; text-decoration: none; font-weight: 600; text-align: center; }
-
-/* RSVP Stacked */
-.rsvp-page {
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Paksa semua elemen ke tengah secara horizontal */
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Borang RSVP */
-.rsvp-stacked-form {
-    width: 100%;
-    max-width: 280px; /* Hadkan lebar supaya nampak 'neat' di tengah */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center; /* Pastikan input & button selari di tengah */
-    margin: 0 auto;
-}
-.rsvp-input {
-    width: 100%; /* Ambil lebar penuh container 280px tadi */
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 12px; /* Ikut style rounded dalam gambar anda */
-    text-align: center;
-    font-family: inherit;
-    background-color: #fff;
-    box-sizing: border-box; /* Sangat penting supaya padding tak besarkan box */
-}
-
-/* Container untuk butang Hadir/Tidak Hadir */
-.rsvp-options-stacked {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* Butang Radio Card */
-.radio-card-stacked {
-    width: 100%;
-    border: 1px solid var(--gold);
-    padding: 12px;
-    border-radius: 12px;
-    cursor: pointer;
-    text-align: center;
-    background-color: #fff;
-    transition: 0.3s;
-    font-size: 0.85rem;
-    box-sizing: border-box;
-    display: block; /* Pastikan ia bertindak sebagai block element */
-}
+/* RSVP Fix */
+.rsvp-stacked-form { width: 100%; max-width: 280px; display: flex; flex-direction: column; gap: 10px; align-items: center; margin: 0 auto; }
+.rsvp-input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 10px; text-align: center; box-sizing: border-box; }
+.rsvp-options-stacked { width: 100%; display: flex; flex-direction: column; gap: 6px; }
+.radio-card-stacked { width: 100%; border: 1px solid var(--gold); padding: 10px; border-radius: 10px; cursor: pointer; font-size: 0.8rem; box-sizing: border-box; background: #fff; }
 .radio-card-stacked input { display: none; }
 .radio-card-stacked:has(input:checked) { background: var(--gold); color: white; }
-#submitBtn {
-    width: 100%;
-    background: var(--gold);
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 5px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+#submitBtn { width: 100%; background: var(--gold); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; cursor: pointer; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+.doa-text-tiny { font-size: 0.6rem; line-height: 1.3; font-style: italic; color: #666; margin-top: 15px; }
 
-.closing-section {
-    margin-top: 5px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.black-phone {
-    color: #000000 !important;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
+/* Ucapan Section Fix */
+.ucapan-page { padding: 35px 20px 10px 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.live-ucapan-box { width: 100%; max-width: 320px; background: #fff; border: 1px solid var(--gold); padding: 12px; border-radius: 12px; height: 180px; display: flex; flex-direction: column; box-sizing: border-box; }
+.ucapan-list { flex-grow: 1; overflow-y: auto; text-align: left; font-size: 0.65rem; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-right: 4px; }
+.ucapan-item { padding: 4px 0; border-bottom: 1px solid #f9f9f9; }
+.input-ucapan-row { display: flex; flex-wrap: wrap; gap: 4px; width: 100%; }
+.input-ucapan-row input { font-size: 0.65rem; padding: 6px; border: 1px solid #ddd; border-radius: 5px; flex: 1; min-width: 60px; box-sizing: border-box; }
+.input-ucapan-row button { background: var(--gold); color: white; border: none; font-size: 0.65rem; padding: 6px 10px; border-radius: 5px; font-weight: 600; }
 
-/* Memastikan nama kekal gold */
-.gold-text {
-    color: var(--gold) !important;
-    font-weight: 600;
-}
+.contact-grid-neat { text-align: center; font-size: 0.75rem; line-height: 1.4; margin: 5px 0; }
+.black-phone { color: #000 !important; font-weight: 600; }
 
-/* Mengecilkan Maaf Zahir & Batin */
-.big-eid-wish {
-    font-size: 1.8rem !important; /* Dikecilkan dari 2.2rem */
-    margin: -2px 0 0 0 !important;
-    color: var(--gold);
-    letter-spacing: 0px;
-}
+/* Closing Section */
+.closing-section { display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 0; }
+.raya-vector { opacity: 0.4; transform: scale(0.7); margin-bottom: -5px; }
+.big-eid-wish { font-size: 1.8rem !important; margin: 0 !important; color: var(--gold); }
+.gold-line-small { width: 25px; height: 1px; background: var(--gold); margin-top: 5px; opacity: 0.4; }
 
-/* Memastikan raya vector tidak terlalu besar */
-.raya-vector {
-    opacity: 0.5;
-    margin-bottom: 0px;
-    transform: scale(0.7); /* Dikecilkan sikit lagi */
-}
+/* Music Floating Control */
+.music-control { position: fixed; bottom: 20px; right: 20px; background: var(--nude); border: 2px solid var(--gold); border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 200; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
-.gold-line-small {
-    width: 25px;
-    height: 1px;
-    background: var(--gold);
-    margin: 5px 0;
-    opacity: 0.4;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.contact-grid-neat {
-    text-align: center;
-    font-size: 0.8rem; /* Besarkan sikit supaya jelas */
-    line-height: 1.6;
-    margin: 10px 0;
-}
-
-.contact-grid-neat p {
-    margin: 4px 0; /* Beri ruang sikit antara baris */
-}
-/* Ucapan Section */
-.ucapan-page {
-    padding: 25px 20px 10px 20px; /* Kurangkan padding atas dari 40px ke 25px */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Tukar dari center ke flex-start supaya tak melompat */
-    align-items: center;
-    gap: 15px; /* Jarak standard antara elemen utama */
-    box-sizing: border-box;
-}
-
-.doa-text-tiny {
-    font-size: 0.65rem;
-    line-height: 1.4;
-    font-style: italic;
-    color: #666;
-    margin-top: 20px;
-    text-align: center;
-    width: 90%;
-}
-.live-ucapan-box {
-    width: 95%;
-    max-width: 330px;
-    background: #fff;
-    border: 1px solid var(--gold);
-    padding: 12px;
-    border-radius: 12px;
-    height: 190px;
-    box-sizing: border-box;
-    margin-top: 10px; 
-}
-.ucapan-list {
-    flex-grow: 1;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; 
-    text-align: left;
-    font-size: 0.7rem;
-    margin-bottom: 10px;
-    padding-right: 5px; 
-}
-.ucapan-item { padding: 3px 0; border-bottom: 1px solid #f0f0f0; }
-.input-ucapan-row { display: flex; flex-wrap: wrap; gap: 5px; width: 100%; }
-.input-ucapan-row input { font-size: 0.7rem; padding: 8px; border: 1px solid #ddd; border-radius: 5px; flex: 1; min-width: 80px; box-sizing: border-box; }
-.input-ucapan-row button { background: var(--gold); color: white; border: none; font-size: 0.7rem; padding: 8px 12px; border-radius: 5px; cursor: pointer; font-weight: 600; }
-
-/* Music Control */
-.music-control { 
-    position: fixed; bottom: 20px; right: 20px; 
-    background: var(--nude); border: 2px solid var(--gold); 
-    border-radius: 50%; width: 45px; height: 45px; 
-    display: flex; justify-content: center; align-items: center; 
-    cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-    z-index: 200; 
-}
-
-.contact-grid-neat {
-    text-align: center;
-    font-size: 0.75rem;
-    line-height: 1.4;
-    margin: 5px 0;
-}
-.closing-section {
-    margin-top: 5px; /* Kecilkan jarak dari nombor telefon */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
 .petal { position: fixed; top: -5vh; z-index: 100; pointer-events: none; animation: fall linear forwards; }
 @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+.batik-overlay { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30c0-10 10-10 10-20s-10-10-10-10-10 0-10 10 10 10 10 20z' fill='%23c5a059' fill-opacity='0.03'/%3E%3C/svg%3E"); }
