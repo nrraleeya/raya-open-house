@@ -80,12 +80,42 @@ body {
 .doa-text-tiny { font-size: 0.7rem; font-style: italic; color: #555; line-height: 1.3; margin-top: 15px; width: 90%; }
 
 /* Ucapan & Contact */
-.live-ucapan-box { width: 100%; border: 1px solid var(--gold); border-radius: 12px; padding: 12px; background: rgba(255,255,255,0.8); height: 160px; display: flex; flex-direction: column; }
-.ucapan-list { flex-grow: 1; overflow-y: auto; text-align: left; font-size: 0.6rem; }
+.live-ucapan-box { 
+    width: 100%; 
+    border: 1px solid var(--gold); 
+    border-radius: 12px; 
+    padding: 12px; 
+    background: rgba(255,255,255,0.7); 
+    height: 250px; /* TUKAR DARI 150px KE 250px */
+    display: flex; 
+    flex-direction: column; 
+    margin-top: -10px; /* Tarik naik sikit supaya muat */
+}
+
+/* Biar senarai ucapan tu ambil ruang lebih */
+.ucapan-list { 
+    flex-grow: 1; 
+    overflow-y: auto; 
+    text-align: left; 
+    font-size: 0.7rem; /* Besarkan sikit font biar senang baca */
+    line-height: 1.4;
+    padding-right: 5px;
+}
 .input-ucapan-row { display: flex; gap: 4px; margin-top: 5px; width: 100%; }
 .input-ucapan-row input { flex: 1; font-size: 0.6rem; padding: 6px; border: 1px solid #ddd; border-radius: 4px; min-width: 0; }
 .input-ucapan-row button { background: var(--gold); color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.6rem; cursor: pointer; }
-.contact-grid-neat { margin: 15px 0; line-height: 1.3; }
+.contact-grid-neat { 
+    margin: 8px 0; 
+    line-height: 1.2; 
+    font-size: 0.7rem;
+}
+
+/* Jarakkan sikit antara setiap ucapan biar tak serabut */
+.ucapan-item {
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
 .masjid-icon svg { width: 80px; height: 40px; margin-bottom: 5px; } /* Masjid dibesarkan */
 
 /* Global components */
