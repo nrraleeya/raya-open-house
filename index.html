@@ -227,6 +227,36 @@
             for (const k in u) { if(document.getElementById(`val${k}`)){ document.getElementById(`val${k}`).innerText = Math.max(0, u[k][0]); const deg = (Math.max(0, u[k][0])/u[k][1])*360; document.getElementById(`pie${k}`).style.background = `conic-gradient(#c5a059 ${deg}deg, #eee 0deg)`; } }
         }, 1000);
 
+        // FUNGSI RSVP (TAMBAH YANG NI)
+        document.getElementById('rsvpForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const originalText = btn.innerText;
+            
+            btn.disabled = true;
+            btn.innerText = "Menghantar...";
+
+            const formData = new FormData(this);
+            formData.append("type", "rsvp"); // Bagitahu Google Script ini data RSVP
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors', 
+                body: formData 
+            })
+            .then(() => {
+                alert("Terima kasih! RSVP anda telah berjaya dihantar. ✨");
+                this.reset();
+                btn.disabled = false;
+                btn.innerText = originalText;
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert("Alahai, ada masalah sikit. Cuba lagi ya!");
+                btn.disabled = false;
+                btn.innerText = originalText;
+            });
+        });
         function createPetal() { const petal = document.createElement('div'); petal.innerHTML = ['🌺', '🌸', '🌼', '🌷', '✨'][Math.floor(Math.random() * 5)]; petal.className = 'petal'; petal.style.left = Math.random() * 100 + 'vw'; petal.style.animationDuration = (Math.random() * 3 + 4) + 's'; document.body.appendChild(petal); setTimeout(() => petal.remove(), 6000); }
         setInterval(createPetal, 450);
         window.onload = fetchUcapan;
