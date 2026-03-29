@@ -17,8 +17,9 @@
         <div class="scroll-stack" id="scrollStack">
             
             <div class="page active batik-overlay" id="page1" onclick="handlePageClick(0)">
-                <video autoplay muted loop playsinline class="first-video-cover" id="coverVideo"></video>
-                <script>document.getElementById('coverVideo').src = "<./video1.mp4";</script>
+                <video autoplay muted loop playsinline class="first-video-cover" id="coverVideo">
+    <source src="./video1.mp4" type="video/mp4">
+</video>
 
                 <div class="floral-border"></div>
                 <div class="nav-container split-nav">
